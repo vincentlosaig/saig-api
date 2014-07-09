@@ -23,11 +23,14 @@ var env = process.env.NODE_ENV || 'development';
 // development only
 if (env === 'development') {
   app.use(errorHandler());
+  app.locals.clientLink = 'http://saig-client.herokuapp.com';
+  app.locals.apiLink = 'http://saig-api.herokuapp.com';
 }
 
 // production only
 if (env === 'production') {
-
+  app.locals.clientLink = 'http://saig-client.herokuapp.com';
+  app.locals.apiLink = 'http://saig-api.herokuapp.com';
 }
 
 // JSON API
