@@ -23,14 +23,11 @@ var env = process.env.NODE_ENV || 'development';
 // development only
 if (env === 'development') {
   app.use(errorHandler());
-  app.locals.clientLink = 'http://localhost:3000';
-  app.locals.apiLink = 'http://localhost:4000';
 }
 
 // production only
 if (env === 'production') {
-  app.locals.clientLink = 'http://localhost:3000';
-  app.locals.apiLink = 'http://localhost:4000';
+
 }
 
 // JSON API
