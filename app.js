@@ -34,12 +34,6 @@ if (env === 'production') {
 }
 
 // JSON API
-app.get('/api/questions', api.questions);
-app.get('/api/question/:id', api.question);
-app.post('/api/question', api.addQuestion);
-app.put('/api/question/:id', api.editQuestion);
-app.delete('/api/question/:id', api.deleteQuestion);
-
 app.get('/json/schemas.json', function(req, res){
 	res.render('schemas', { data : JSON.stringify(api.schemas()) });
 });
