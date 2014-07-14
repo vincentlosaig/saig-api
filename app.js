@@ -36,7 +36,7 @@ app.get('/json/schemas.json', function(req, res){
 
 // redirect all others to the index (HTML5 history)
 app.get('*', function(req,res){
-    res.redirect(app.locals.clientLink);
+    res.redirect("http://saig-client.herokuapp.com");
 });
 
 http.createServer(app).listen(app.get('port'), function () {
