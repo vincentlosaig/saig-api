@@ -23,10 +23,12 @@ var env = process.env.NODE_ENV || 'development';
 // development only
 if (env === 'development') {
   app.use(errorHandler());
+  app.locals.clientLink = "http://localhost:3000";
 }
 
 // production only
 if (env === 'production') {
+  app.locals.clientLink = "http://saig-client.herokuapp.com";
 }
 
 // JSON API
@@ -36,7 +38,7 @@ app.get('/json/schemas.json', function(req, res){
 
 // redirect all others to the index (HTML5 history)
 app.get('*', function(req,res){
-    res.redirect("http://saig-client.herokuapp.com");
+    res.redirect(app.locals.clientLink);
 });
 
 http.createServer(app).listen(app.get('port'), function () {
